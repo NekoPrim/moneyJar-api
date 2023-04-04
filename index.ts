@@ -1,7 +1,11 @@
 import express, { Request, Response } from 'express';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
 
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 dotenv.config();
 
 const port = process.env.PORT;
